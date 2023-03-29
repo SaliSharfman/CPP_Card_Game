@@ -2,7 +2,7 @@
 using namespace std;
 using namespace ariel;
 
-Card:: Card(int number, int color){
+Card:: Card(int number, int color){ //constructor that gets 2 int parameters for the number and color of the card
     this->number = number;
     this->color = color;
 }
