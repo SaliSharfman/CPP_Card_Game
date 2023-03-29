@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include "player.hpp"
 using namespace std;
 
 namespace ariel
