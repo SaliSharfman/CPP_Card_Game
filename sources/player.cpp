@@ -1,5 +1,6 @@
 #include "card.hpp"
 #include "player.hpp"
+#include <string>
 using namespace std;
 using namespace ariel;
 
@@ -8,6 +9,9 @@ Player:: Player(){
 }
 Player:: Player(string name){
     this->name = name;
+}
+string Player:: getName() const{
+    return this->name;
 }
 int Player:: stacksize() const{
     return 0;
