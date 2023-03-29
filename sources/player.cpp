@@ -4,10 +4,10 @@
 using namespace std;
 using namespace ariel;
 
-Player:: Player(){
+Player:: Player(){ //defult constructor
     this->name = "player";
 }
-Player:: Player(string name){
+Player:: Player(string name){ //constructor with parameter of the name
     this->name = name;
 }
 string Player:: getName() const{
