@@ -6,10 +6,10 @@ Card:: Card(int number, int color){ //constructor that gets 2 int parameters for
     this->number = number;
     this->color = color;
 }
-int Card:: getNumber() const{
+int Card:: getNumber() const{ // returns the number of the card
     return this->number;
 }
-int Card:: getColor() const{
+int Card:: getColor() const{ // returns the color of the card
     return this->color;
 }
 string Card:: toString() const{
