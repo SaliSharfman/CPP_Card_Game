@@ -10,8 +10,8 @@ namespace ariel
         Player player1, player2;
 
         public:
-        Game();
-        Game(Player p1, Player p2);
+        Game(); //defult Constructor
+        Game(Player p1, Player p2); //constructor with 2 parameters
         void playTurn();
         void printLastTurn();
         void playAll();
