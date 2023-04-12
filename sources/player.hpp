@@ -8,7 +8,7 @@ namespace ariel
     class Player{
         private:
         string name;
-        int taken;
+        int taken, loseCounter;
         list<int> cards{};
         list<int> cardsWon{};
 
@@ -18,6 +18,7 @@ namespace ariel
         string getName() const;
         int stacksize() const;
         int cardesTaken() const;
+        void lose();
         void take(int amount);
         int throwCard();
         void pushToHand(int card);

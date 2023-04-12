@@ -71,13 +71,15 @@ void Game:: playTurn(){
             this-> player1.take(cardsOnTable);
             this-> player1.winCard(c1.getSerialNum());
             turnLog += this-> player1.getName()+" wins.";
-            this-> turnsCounter +=1;
+            this-> player2.lose();
+            this-> turnsCounter +=1 ; 
         }
         else{
             this-> player2.take(cardsOnTable);
             this-> player2.winCard(c2.getSerialNum());
             turnLog += this-> player2.getName()+" wins.";
-            this-> turnsCounter +=1;
+            this-> player1.lose();
+            this-> turnsCounter +=1 ;
         }
     }
     this-> log.push_back(turnLog);
@@ -106,12 +108,12 @@ void Game:: printLog(){
 }
 void Game:: printStats(){
     cout << ""<< endl;
+    cout << "Game States:" << endl;
+    cout << "Amount of draws: " + to_string(this->drawCounter)<< endl;
+    cout << "Amount of turns: " + to_string(this->turnsCounter)<< endl;
+    float rate = (float)this->drawCounter/ (float)this->turnsCounter;
+    cout << "Draw rate: " + to_string((int)(rate*100))+"%\n"<< endl;
     cout << this-> player1.states() << endl;
     cout << this-> player2.states() << endl;
-    cout << "Game States:" << endl;
-    cout << "Amount Of Draws: " + to_string(this->drawCounter)<< endl;
-    cout << "Amount Of Turns: " + to_string(this->turnsCounter)<< endl;
-    float rate = (float)this->drawCounter/ (float)this->turnsCounter;
-    cout << "draw rate: " + to_string((int)(rate*100))+"%"<< endl;
 }
 

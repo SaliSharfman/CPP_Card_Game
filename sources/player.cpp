@@ -8,10 +8,12 @@ using namespace ariel;
 Player:: Player(){ //defult constructor
     this-> name = "player";
     this-> taken = 0;
+    this-> loseCounter = 0;
 }
 Player:: Player(string name){ //constructor with parameter of the name
     this->name = name;
     this-> taken = 0;
+    this-> loseCounter = 0;
 }
 string Player:: getName() const{
     return this->name;
@@ -30,6 +32,9 @@ int Player:: throwCard(){
 void Player:: take(int amount){
     this-> taken += amount;
 }
+void Player:: lose(){
+    this-> loseCounter += 1;
+}
 void Player:: pushToHand(int card){
     this-> cards.push_front(card);
 }
@@ -42,9 +47,16 @@ void Player:: printCards(){
     }
 }
 string Player:: states() const{
-    string str = this->name + " states:\nCards Taken: " + to_string(this-> cardesTaken()) +"\nWins: "+ to_string(this-> cardsWon.size())+ "\nCards Won:\n";
+    int wins= this-> cardsWon.size();
+    float rate = (float)wins/ (float)(this-> loseCounter+wins);
+    string str = this->name + " States:\n";
+    str += "Cards taken: " + to_string(this-> cardesTaken());
+    str += "\nWins: "+ to_string(wins);
+    str += "\nLoses: "+ to_string(this-> loseCounter);
+    str += "\nWin rate: "+ to_string((int)(rate*100))+"%";
+    str += "\nCards won:\n";
     for (auto i : this-> cardsWon) {
-        str += Card(i).toString() +'\n';
+        str += "\t"+Card(i).toString() +'\n';
     }
     return str;
 }
