@@ -10,8 +10,10 @@ namespace ariel
         int color;
 
         public:
+        Card(int n);
         Card(int number, int color);
         int getNumber() const;
+        int getSerialNum() const; 
         int getColor() const;
         string toString() const;
     };
