@@ -14,7 +14,7 @@ namespace ariel
         int drawCounter, turnsCounter;
 
         public:
-        Game(Player& p1, Player& p2); //constructor with 2 parameters
+        Game(Player& player1, Player& player2); //constructor with 2 parameters
         void playTurn();
         void printLastTurn();
         void playAll();
