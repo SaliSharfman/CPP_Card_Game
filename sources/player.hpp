@@ -9,8 +9,8 @@ namespace ariel
         private:
         string name;
         int taken, loseCounter;
-        list<int> cards{};
-        list<int> cardsWon{};
+        list<int> cards{}; // initialise a list of integers for the cards in the hand of the player.
+        list<int> cardsWon{}; // initialise a list of integers for the cards that won a turn for the player.
 
         public:
         Player();
