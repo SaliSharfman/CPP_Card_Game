@@ -10,7 +10,7 @@ namespace ariel
         private:
         Player& player1;
         Player& player2;
-        list<string> log{};
+        list<string> log{}; // initialise a list of strings for the log of the game.
         int drawCounter, turnsCounter;
 
         public:
