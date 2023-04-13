@@ -2,7 +2,7 @@
 using namespace std;
 using namespace ariel;
 
-Card:: Card(int number, int color){ //constructor that gets 2 int parameters for the number and color of the card
+Card:: Card(int number, int color){ //constructor that gets 2 int parameters for the number and color of the card.
     this->number = number;
     this->color = color;
 }
@@ -10,19 +10,19 @@ Card:: Card(int n){ //constructor that gets 1 int parameter that presents a uniq
     this->number = n/4+1;
     this->color = n%4;
 }
-int Card:: getNumber() const{ // returns the number of the card
+int Card:: getNumber() const{ // returns the number of the card (1 to 13).
     return this->number;
 }
-int Card:: getColor() const{ // returns the color of the card
+int Card:: getColor() const{ // returns the color of the card (0 to 3).
     return this->color;
 }
-int Card:: getSerialNum() const{ // returns the serial number of the card (0 to 51)
+int Card:: getSerialNum() const{ // returns the serial number of the card (0 to 51).
     return (this->number-1) *4 + this->color;
 }
-string Card:: toString() const{
-    string num= to_string(this->number);
+string Card:: toString() const{ // return a string represents the card using the number and the color (for example "Ace of Spades", "5 of Hearts").
+    string num= to_string(this->number); // the defult string of a number is the same number (2,3,4..10).
     string sign= "";
-    switch (this->number){
+    switch (this->number){ // the special numbers (1,10,11,12,13).
         case 1:
         num = "Ace";
         break;
@@ -36,7 +36,7 @@ string Card:: toString() const{
         num = "King";
         break;
     }
-    switch (this->color){
+    switch (this->color){ // the number of the color will be a sign of a card.
         case 0:
         sign = "Spades";
         break;
