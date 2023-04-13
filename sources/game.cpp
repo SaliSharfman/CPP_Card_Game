@@ -52,6 +52,11 @@ void Game:: playTurn(){ // function that play a turn until one player takes card
         cardsOnTable += 2; // both of the players throwed a card so we have more two cards on the table.
         v1 = c1.getNumber(); // v1 is the value of the card c1 of player1.
         v2 = c2.getNumber(); // v2 is the value of the card c2 of player2.
+        if((v1==2&&v2==14)||(v1==14&&v2==2)){ // make that 2 win Ace
+            int tmp = v1;
+            v1=v2;
+            v2=tmp;
+        }
         if(v1 == v2){ // if v1 = v2 we have a draw.
             turnLog += "Draw. "; // report the draw to the log.
             this-> drawCounter +=1; // promote the draw counter.
