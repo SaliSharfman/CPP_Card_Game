@@ -97,7 +97,7 @@ void Game:: printWiner(){ // print the name of the winner, using cardsTaken func
     if(t1>t2) // player1 wins.
         cout << this->player1.getName() << endl; // prints the name of player1.
     else if(t2>t1) // player2 wins.
-        cout << this->player2.getName() << endl;; // prints the name of player1.
+        cout << this->player2.getName() << endl; // prints the name of player1.
     else // the game finished with a draw.
         cout << "Draw." << endl; // prints draw.
 }
